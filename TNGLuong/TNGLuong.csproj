@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4974F3E7-7396-4033-92D4-CC479969CCA0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TNGLuong</RootNamespace>
+    <AssemblyName>TNGLuong</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.607, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\dangt\Downloads\CalendarExtender\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BangLuongThang.aspx" />
+    <Content Include="BangTinhLuongCN.aspx" />
+    <Content Include="CanhBao.aspx" />
+    <Content Include="CongDiLamCongNhan.aspx" />
+    <Content Include="css\main.css" />
+    <Content Include="css\style-theme.scss.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="css\util.css" />
+    <Content Include="DangKyComCa.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DoiMatKhau.aspx" />
+    <Content Include="DuyetNS.aspx" />
+    <Content Include="DuyetNSCN.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\add.png" />
+    <Content Include="images\bangluongngay.png" />
+    <Content Include="images\bangluongthang.png" />
+    <Content Include="images\border_bottom.png" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\congdilam.png" />
+    <Content Include="images\dangkycomca.png" />
+    <Content Include="images\DanhGiaKyNang.png" />
+    <Content Include="images\DanhSachCN.png" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\DePhongLuaDao.jpg" />
+    <Content Include="images\detail.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\hd.png" />
+    <Content Include="images\huy.png" />
+    <Content Include="images\icons\favicon.ico" />
+    <Content Include="images\img-01.png" />
+    <Content Include="images\img-02.png" />
+    <Content Include="images\khaibaoyte.png" />
+    <Content Include="images\Khao_Sat.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\nangsuatngay.png" />
+    <Content Include="images\phancongdoan.png" />
+    <Content Include="images\phancumtruong.png" />
+    <Content Include="images\phanto.png" />
+    <Content Include="images\phone.png" />
+    <Content Include="images\quantri.png" />
+    <Content Include="images\refresh.png" />
+    <Content Include="images\save.png" />
+    <Content Include="images\thoigiancho.png" />
+    <Content Include="images\tonghop.png" />
+    <Content Include="images\tonghopluongthang.png" />
+    <Content Include="js\main.js" />
+    <Content Include="js\menu_main.js" />
+    <Content Include="js\modernizr-2.6.2.js" />
+    <Content Include="KhaiBaoSucKhoe.aspx" />
+    <Content Include="KyLucCongNhan.aspx" />
+    <Content Include="KyLucLuongCaNhan.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LuongNS.aspx" />
+    <Content Include="MTKN_BaoCao_ToTruong.aspx" />
+    <Content Include="MTKN_MucTieu_PhongBan.aspx" />
+    <Content Include="Musics\COVID-19_sang ngay_28.11_%28phuong,xa%29.mp3" />
+    <Content Include="NangSuatCongNhan.aspx" />
+    <Content Include="NhapNhayKhau.aspx" />
+    <Content Include="NhapThoiGian.aspx" />
+    <Content Include="MTKN_XepHang_CongNhan.aspx" />
+    <Content Include="PhanCongCongDoan.aspx" />
+    <Content Include="PhanCumTruong.aspx" />
+    <Content Include="PhanToNhayKhau.aspx" />
+    <Content Include="ThoiGianCho.aspx" />
+    <Content Include="ThuongNam.aspx" />
+    <Content Include="TongHopCongDoan.aspx" />
+    <Content Include="TongHopLuong.aspx" />
+    <Content Include="TTKiemTraCongDiLam.aspx" />
+    <Content Include="vendor\animate\animate.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\popper.js" />
+    <Content Include="vendor\bootstrap\js\popper.min.js" />
+    <Content Include="vendor\bootstrap\js\tooltip.js" />
+    <Content Include="vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="vendor\select2\select2.css" />
+    <Content Include="vendor\select2\select2.js" />
+    <Content Include="vendor\select2\select2.min.css" />
+    <Content Include="vendor\select2\select2.min.js" />
+    <Content Include="vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="WebAdmin\build\css\custom.css" />
+    <Content Include="WebAdmin\build\css\custom.min.css" />
+    <Content Include="WebAdmin\build\images\back_disabled.png" />
+    <Content Include="WebAdmin\build\images\back_enabled.png" />
+    <Content Include="WebAdmin\build\images\back_enabled_hover.png" />
+    <Content Include="WebAdmin\build\images\forward_disabled.png" />
+    <Content Include="WebAdmin\build\images\forward_enabled.png" />
+    <Content Include="WebAdmin\build\images\forward_enabled_hover.png" />
+    <Content Include="WebAdmin\build\images\loading.gif" />
+    <Content Include="WebAdmin\build\images\search.png" />
+    <Content Include="WebAdmin\build\js\custom.js" />
+    <Content Include="WebAdmin\build\js\custom.min.js" />
+    <Content Include="WebAdmin\production\css\maps\jquery-jvectormap-2.0.3.css" />
+    <Content Include="WebAdmin\production\images\logo.png" />
+    <Content Include="WebAdmin\production\images\user.png" />
+    <Content Include="WebAdmin\production\InsertMaHang.ascx" />
+    <Content Include="WebAdmin\production\IsPayroll.ascx" />
+    <Content Include="WebAdmin\production\js\datepicker\daterangepicker.js" />
+    <Content Include="WebAdmin\production\js\moment\moment.min.js" />
+    <Content Include="WebAdmin\production\KhoaChucNang.ascx" />
+    <Content Include="WebAdmin\production\Orther.ascx" />
+    <Content Include="WebAdmin\production\PhanQuyenUser.ascx" />
+    <Content Include="WebAdmin\production\ResetPass.ascx" />
+    <Content Include="WebAdmin\production\ToTruong.ascx" />
+    <Content Include="WebAdmin\src\js\custom.js" />
+    <Content Include="WebAdmin\src\js\examples.js" />
+    <Content Include="WebAdmin\src\js\helpers\smartresize.js" />
+    <Content Include="WebAdmin\vendors\autosize\.gitignore" />
+    <Content Include="WebAdmin\vendors\autosize\build.js" />
+    <Content Include="WebAdmin\vendors\autosize\dist\autosize.js" />
+    <Content Include="WebAdmin\vendors\autosize\dist\autosize.min.js" />
+    <Content Include="WebAdmin\vendors\autosize\example\index.html" />
+    <Content Include="WebAdmin\vendors\autosize\src\autosize.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\alert.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\button.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\carousel.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\collapse.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\dropdown.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\index.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\modal.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\popover.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\scrollspy.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\tab.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\toast.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\tooltip.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\util.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\alert.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\button.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\carousel.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\collapse.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\dropdown.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\index.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\modal.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\popover.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\scrollspy.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\tab.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\toast.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\tools\sanitizer.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\tooltip.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\src\util.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\browsers.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\integration\bundle.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\integration\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\integration\rollup.bundle.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\karma.conf.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\alert.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\button.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\carousel.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\collapse.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\dropdown.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\modal.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\popover.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\scrollspy.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\tab.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\toast.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\tooltip.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\util.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\alert.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\button.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\carousel.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\collapse.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\dropdown.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\modal.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\popover.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\scrollspy.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\tab.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\toast.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\visual\tooltip.html" />
+    <Content Include="Admin.Master" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\brand\bootstrap-outline.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\brand\bootstrap-punchout.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\brand\bootstrap-social-logo.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\brand\bootstrap-social.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\brand\bootstrap-solid.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\css\docs.min.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\bootstrap-themes%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\bootstrap-themes.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\album%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\album.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\blog%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\blog.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\carousel%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\carousel.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\checkout%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\checkout.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\cover%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\cover.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\dashboard%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\dashboard.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\floating-labels%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\floating-labels.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\grid%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\grid.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\jumbotron%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\jumbotron.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-bottom%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-bottom.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-fixed%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-fixed.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-static%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbar-static.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbars%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\navbars.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\offcanvas%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\offcanvas.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\pricing%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\pricing.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\product%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\product.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sign-in%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sign-in.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\starter-template%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\starter-template.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sticky-footer%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sticky-footer-navbar%402x.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sticky-footer-navbar.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\examples\sticky-footer.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\android-chrome-192x192.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\android-chrome-512x512.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\apple-touch-icon.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\browserconfig.xml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\favicon-16x16.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\favicon-32x32.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\mstile-144x144.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\mstile-150x150.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\mstile-310x150.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\mstile-310x310.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\mstile-70x70.png" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\safari-pinned-tab.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\docs.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\src\application.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\src\ie-emulation-modes-warning.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\src\search.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\vendor\anchor.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\vendor\bs-custom-file-input.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\vendor\clipboard.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\js\vendor\jquery-slim.min.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\album\album.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\album\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\blog\blog.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\blog\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\carousel\carousel.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\carousel\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\checkout\form-validation.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\checkout\form-validation.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\checkout\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\cover\cover.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\cover\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\dashboard\dashboard.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\dashboard\dashboard.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\dashboard\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\floating-labels\floating-labels.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\floating-labels\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\grid\grid.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\grid\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\jumbotron\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\jumbotron\jumbotron.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbar-bottom\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbar-fixed\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbar-fixed\navbar-top-fixed.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbar-static\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbar-static\navbar-top.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbars\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\navbars\navbar.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\offcanvas\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\offcanvas\offcanvas.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\offcanvas\offcanvas.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\pricing\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\pricing\pricing.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\product\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\product\product.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sign-in\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sign-in\signin.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\starter-template\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\starter-template\starter-template.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sticky-footer-navbar\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sticky-footer\index.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\versions.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\favicon.ico" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\robots.txt" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\sw.js" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\ads.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\analytics.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\bugify.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\callout.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\docs-navbar.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\docs-sidebar.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\example.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\favicons.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\footer.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\header.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\bootstrap-stack.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\bootstrap.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\download.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\github.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\import.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\lightning.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\menu.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\opencollective.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\placeholder.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\slack.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\icons\twitter.svg" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\scripts.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\skippy.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\social.html" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\stylesheet.html" />
+    <None Include="Properties\PublishProfiles\LuongTNG.pubxml" />
+    <Content Include="Site.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WebAdmin\src\scss\custom.scss" />
+    <Content Include="WebAdmin\src\scss\daterangepicker.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\alert.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\button.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\carousel.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\collapse.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\dropdown.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\index.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\modal.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\popover.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\scrollspy.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\tab.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\toast.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\tooltip.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\dist\util.js.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\README.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\js\tests\unit\.eslintrc.json" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\bootstrap.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_overflow.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_shadows.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_stretched-link.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_alert.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_badge.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_button-group.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_buttons.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_card.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_carousel.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_close.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_code.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_dropdown.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_forms.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_functions.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_grid.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_images.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_input-group.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_list-group.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_media.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_mixins.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_modal.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_nav.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_navbar.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_pagination.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_popover.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_print.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_progress.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_reboot.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_root.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_spinners.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_tables.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_toasts.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_tooltip.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_transitions.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_type.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_utilities.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\scss\_variables.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\.eslintrc.json" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\about\brand.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\about\license.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\about\overview.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\about\team.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\about\translations.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\css\docs.min.css.map" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\img\favicons\manifest.json" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\docs.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_ads.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_algolia.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_anchor.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_brand.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_browser-bugs.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_buttons.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_callouts.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_clipboard-js.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_colors.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_component-examples.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_content.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_footer.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_masthead.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_nav.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_placeholder-img.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_sidebar.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_skippy.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_syntax.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\assets\scss\_variables.scss" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\browser-bugs.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\alerts.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\badge.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\breadcrumb.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\button-group.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\buttons.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\card.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\carousel.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\collapse.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\dropdowns.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\forms.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\input-group.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\jumbotron.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\list-group.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\media-object.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\modal.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\navbar.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\navs.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\pagination.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\popovers.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\progress.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\scrollspy.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\spinners.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\toasts.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\components\tooltips.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\code.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\figures.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\images.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\reboot.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\tables.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\content\typography.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\examples\.stylelintrc" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\extend\approach.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\extend\icons.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\accessibility.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\best-practices.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\browsers-devices.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\build-tools.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\contents.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\download.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\introduction.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\javascript.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\theming.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\getting-started\webpack.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\layout\grid.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\layout\overview.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\layout\utilities-for-layout.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\migration.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\borders.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\clearfix.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\close-icon.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\colors.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\display.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\embed.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\flex.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\float.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\image-replacement.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\overflow.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\position.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\screen-readers.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\shadows.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\sizing.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\spacing.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\stretched-link.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\text.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\vertical-align.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\docs\4.3\utilities\visibility.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\breakpoints.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\browser-bugs.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\browser-features.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\colors.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\core-team.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\docs-versions.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\examples.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\grays.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\nav.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\theme-colors.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_data\translations.yml" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\callout-danger-async-methods.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\callout-info-mediaqueries-breakpoints.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\callout-info-prefersreducedmotion.md" />
+    <Content Include="WebAdmin\vendors\bootstrap\site\_includes\callout-warning-color-assistive-technologies.md" />
+    <Content Include="WebAdmin\vendors\autosize\.bower.json" />
+    <Content Include="WebAdmin\vendors\autosize\bower.json" />
+    <Content Include="WebAdmin\vendors\autosize\changelog.md" />
+    <Content Include="WebAdmin\vendors\autosize\LICENSE.md" />
+    <Content Include="WebAdmin\vendors\autosize\package.json" />
+    <Content Include="WebAdmin\vendors\autosize\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\GridViewGroup.cs" />
+    <Compile Include="App_Start\GridViewGroupList.cs" />
+    <Compile Include="App_Start\GridViewHelper.cs" />
+    <Compile Include="App_Start\GridViewSummary.cs" />
+    <Compile Include="App_Start\GridViewSummaryList.cs" />
+    <Compile Include="App_Start\Info.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BangLuongThang.aspx.cs">
+      <DependentUpon>BangLuongThang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BangLuongThang.aspx.designer.cs">
+      <DependentUpon>BangLuongThang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CanhBao.aspx.cs">
+      <DependentUpon>CanhBao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CanhBao.aspx.designer.cs">
+      <DependentUpon>CanhBao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cls_DangKyAnCa\clsDangKy_AnCa.cs" />
+    <Compile Include="Cls_DangKyAnCa\dbNSTLContent.cs" />
+    <Compile Include="Cls_DangKyAnCa\TAC_DangKy_AnCa_Chot.cs" />
+    <Compile Include="Cls_DangKyAnCa\TAC_DangKy_AnCa_Ngay.cs" />
+    <Compile Include="Cls_DangKyAnCa\TAC_DangKy_AnCa_Ngay_Khach.cs" />
+    <Compile Include="Cls_DangKyAnCa\TAC_DangKy_AnCa_NhanSu.cs" />
+    <Compile Include="Cls_DangKyAnCa\TAC_DonGia_AnCa.cs" />
+    <Compile Include="CongDiLamCongNhan.aspx.cs">
+      <DependentUpon>CongDiLamCongNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CongDiLamCongNhan.aspx.designer.cs">
+      <DependentUpon>CongDiLamCongNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKyComCa.aspx.cs">
+      <DependentUpon>DangKyComCa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKyComCa.aspx.designer.cs">
+      <DependentUpon>DangKyComCa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhaiBaoSucKhoe.aspx.cs">
+      <DependentUpon>KhaiBaoSucKhoe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhaiBaoSucKhoe.aspx.designer.cs">
+      <DependentUpon>KhaiBaoSucKhoe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KyLucCongNhan.aspx.cs">
+      <DependentUpon>KyLucCongNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KyLucCongNhan.aspx.designer.cs">
+      <DependentUpon>KyLucCongNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KyLucLuongCaNhan.aspx.cs">
+      <DependentUpon>KyLucLuongCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KyLucLuongCaNhan.aspx.designer.cs">
+      <DependentUpon>KyLucLuongCaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelsView\clsBangLuongThang.cs" />
+    <Compile Include="ModelsView\clsDM_DonVi.cs" />
+    <Compile Include="ModelsView\clsKyLucCaNhan.cs" />
+    <Compile Include="ModelsView\clsKyLucLuongCaNhan.cs" />
+    <Compile Include="ModelsView\clsNhanSu.cs" />
+    <Compile Include="ModelsView\clsPhanCumTruong.cs" />
+    <Compile Include="ModelsView\clsResetToMay.cs" />
+    <Compile Include="ModelsView\clsThang.cs" />
+    <Compile Include="ModelsView\clsThuongNam.cs" />
+    <Compile Include="ModelsView\clsTongHopLuongThang.cs" />
+    <Compile Include="ModelsView\clsTongHopLuong_ChiTietLuong.cs" />
+    <Compile Include="ModelsView\clsTongHopLuong_ChiTietNangSuat.cs" />
+    <Compile Include="ModelsView\CongNhanChuaNhap.cs" />
+    <Compile Include="ModelsView\DSNSToTruong.cs" />
+    <Compile Include="ModelsView\HuongDanThaoTac.cs" />
+    <Compile Include="ModelsView\DanhSachNhanSuGiaoKeHoach.cs" />
+    <Compile Include="ModelsView\ListCongDoan_KeHoach.cs" />
+    <Compile Include="ModelsView\ListNhanSuTheoPhongBan.cs" />
+    <Compile Include="ModelsView\ListCongDiLamCongNhan.cs" />
+    <Compile Include="ModelsView\ListDM_Ca.cs" />
+    <Compile Include="ModelsView\ListNangSuatToTruongPhan.cs" />
+    <Compile Include="ModelsView\ListCongDoanCN.cs" />
+    <Compile Include="ModelsView\MayChuChiNhanh.cs" />
+    <Compile Include="ModelsView\PhanToNK.cs" />
+    <Compile Include="ModelsView\TongHopCD.cs" />
+    <Compile Include="Models\DatabaseManager.cs" />
+    <Compile Include="Models\LCB_ThongSoHeThong.cs" />
+    <Compile Include="Models\LCB_WEB_Admin_Extension.cs" />
+    <Compile Include="Models\LCB_WEB_ChucNang.cs" />
+    <Compile Include="Models\LCB_WEB_KhoaChucNang.cs" />
+    <Compile Include="Models\LCB_WEB_KhoaChucNang_Append.cs" />
+    <Compile Include="Models\MTKN_DanhSachNhanSuTo.cs" />
+    <Compile Include="Models\MTKN_DM_LanDanhGia.cs" />
+    <Compile Include="Models\MTKN_DM_XepHang.cs" />
+    <Compile Include="Models\MTKN_MucTieu_LoaiMay.cs" />
+    <Compile Include="Models\MTKN_MucTieu_XepHang.cs" />
+    <Compile Include="Models\MTKN_NhanSu_LoaiMay_XepHang.cs" />
+    <Compile Include="Models\MTKN_XepHang_NhanSu_New.cs" />
+    <Compile Include="Models\MTKN_XepHang_NhanSu.cs" />
+    <Compile Include="Models\SK_DiaDiemDieuTri.cs" />
+    <Compile Include="Models\SK_NhomBenh.cs" />
+    <Compile Include="Models\SK_KhaiBaoDinhKy.cs" />
+    <Compile Include="Models\tblCTL_BangCongNgay.cs" />
+    <Compile Include="Models\LCB_KeHoach_NhanVien_ToTruongPhanCong.cs" />
+    <Compile Include="Models\LCB_MaHang_KhongBat_LuyKeBTP.cs" />
+    <Compile Include="Models\LCB_MaHang_KhongBat_LuyKeBTP_Append.cs" />
+    <Compile Include="Models\LCB_PhanCumTruong.cs" />
+    <Compile Include="Models\LCB_ToTruong_CBC.cs" />
+    <Compile Include="Models\LCB_ToTruong_CBC_Append.cs" />
+    <Compile Include="Models\LCB_WEB_Admin.cs" />
+    <Compile Include="Models\LCB_WEB_KhoaBangLuong.cs" />
+    <Compile Include="Models\LCB_WEB_KhoaBangLuong_Append.cs" />
+    <Compile Include="Models\LCB_WEB_ResetPass.cs" />
+    <Compile Include="Models\LCB_WEB_TimeOpen.cs" />
+    <Compile Include="Models\StoredParameterCollection.cs" />
+    <Compile Include="Models\StoredProcedureParameter.cs" />
+    <Compile Include="BangTinhLuongCN.aspx.cs">
+      <DependentUpon>BangTinhLuongCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BangTinhLuongCN.aspx.designer.cs">
+      <DependentUpon>BangTinhLuongCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DuyetNS.aspx.cs">
+      <DependentUpon>DuyetNS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DuyetNS.aspx.designer.cs">
+      <DependentUpon>DuyetNS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DuyetNSCN.aspx.cs">
+      <DependentUpon>DuyetNSCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DuyetNSCN.aspx.designer.cs">
+      <DependentUpon>DuyetNSCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LuongNS.aspx.cs">
+      <DependentUpon>LuongNS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LuongNS.aspx.designer.cs">
+      <DependentUpon>LuongNS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelsView\InfoUserName.cs" />
+    <Compile Include="ModelsView\ListMaHang.cs" />
+    <Compile Include="ModelsView\ListNangSuat.cs" />
+    <Compile Include="ModelsView\ListNangSuatCongNhan.cs" />
+    <Compile Include="ModelsView\ListNSNhayKhau.cs" />
+    <Compile Include="ModelsView\ListThoiGianCho.cs" />
+    <Compile Include="ModelsView\ListUser.cs" />
+    <Compile Include="ModelsView\LuongCongNhan.cs" />
+    <Compile Include="ModelsView\MaHangNhayKhau.cs" />
+    <Compile Include="ModelsView\NangSuatNgayCongNhan.cs" />
+    <Compile Include="Models\CBC_BaoNgungViec.cs" />
+    <Compile Include="Models\CheckTNGF.cs" />
+    <Compile Include="Models\DanhSachLuongNhanVien.cs" />
+    <Compile Include="Models\DM_TaiKhoan.cs" />
+    <Compile Include="Models\LCB_DM_LyDoNgungViec.cs" />
+    <Compile Include="Models\LCB_KeHoach_NhanVien.cs" />
+    <Compile Include="Models\LCB_KeHoach_To.cs" />
+    <Compile Include="Models\LCB_LuongNgayCongNhan.cs" />
+    <Compile Include="Models\LCB_NangSuatCongNhan.cs" />
+    <Compile Include="Models\LCB_NhayKhau.cs" />
+    <Compile Include="Models\LCB_NhayKhauCongNhan.cs" />
+    <Compile Include="Models\LCB_ThoiGianNgungViec.cs" />
+    <Compile Include="Models\KhaiBaoYTeDbContact.cs" />
+    <Compile Include="Models\TNG_CTLDbContact.cs" />
+    <Compile Include="Models\TNG_CTLChiNhanhContact.cs" />
+    <Compile Include="Models\TNG_QLSXDbContact.cs" />
+    <Compile Include="Models\ultils.cs" />
+    <Compile Include="Models\LCB_MaHang.cs" />
+    <Compile Include="Models\NSTL_NS_ThongTinNS.cs" />
+    <Compile Include="Models\TNGLuongDbContact.cs" />
+    <Compile Include="Models\View_BangLuongTheoThang.cs" />
+    <Compile Include="Models\View_BangLuongTheoThang_DANHGIA.cs" />
+    <Compile Include="Models\View_ChiNhanh.cs" />
+    <Compile Include="Models\View_ToMay.cs" />
+    <Compile Include="Models\View_Web_NhanSuTheoPB_MaNS_ID.cs" />
+    <Compile Include="Models\View_Web_NhanSuTheoPB.cs" />
+    <Compile Include="Models\View_Web_ThongTinNS.cs" />
+    <Compile Include="MTKN_BaoCao_ToTruong.aspx.cs">
+      <DependentUpon>MTKN_BaoCao_ToTruong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTKN_BaoCao_ToTruong.aspx.designer.cs">
+      <DependentUpon>MTKN_BaoCao_ToTruong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MTKN_MucTieu_PhongBan.aspx.cs">
+      <DependentUpon>MTKN_MucTieu_PhongBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTKN_MucTieu_PhongBan.aspx.designer.cs">
+      <DependentUpon>MTKN_MucTieu_PhongBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NangSuatCongNhan.aspx.cs">
+      <DependentUpon>NangSuatCongNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NangSuatCongNhan.aspx.designer.cs">
+      <DependentUpon>NangSuatCongNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhapNhayKhau.aspx.cs">
+      <DependentUpon>NhapNhayKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhapNhayKhau.aspx.designer.cs">
+      <DependentUpon>NhapNhayKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NhapThoiGian.aspx.cs">
+      <DependentUpon>NhapThoiGian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NhapThoiGian.aspx.designer.cs">
+      <DependentUpon>NhapThoiGian.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MTKN_XepHang_CongNhan.aspx.cs">
+      <DependentUpon>MTKN_XepHang_CongNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MTKN_XepHang_CongNhan.aspx.designer.cs">
+      <DependentUpon>MTKN_XepHang_CongNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCongCongDoan.aspx.cs">
+      <DependentUpon>PhanCongCongDoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanCongCongDoan.aspx.designer.cs">
+      <DependentUpon>PhanCongCongDoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCumTruong.aspx.cs">
+      <DependentUpon>PhanCumTruong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanCumTruong.aspx.designer.cs">
+      <DependentUpon>PhanCumTruong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhanToNhayKhau.aspx.cs">
+      <DependentUpon>PhanToNhayKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhanToNhayKhau.aspx.designer.cs">
+      <DependentUpon>PhanToNhayKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ThoiGianCho.aspx.cs">
+      <DependentUpon>ThoiGianCho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThoiGianCho.aspx.designer.cs">
+      <DependentUpon>ThoiGianCho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThuongNam.aspx.cs">
+      <DependentUpon>ThuongNam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThuongNam.aspx.designer.cs">
+      <DependentUpon>ThuongNam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TongHopCongDoan.aspx.cs">
+      <DependentUpon>TongHopCongDoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TongHopCongDoan.aspx.designer.cs">
+      <DependentUpon>TongHopCongDoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TongHopLuong.aspx.cs">
+      <DependentUpon>TongHopLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TongHopLuong.aspx.designer.cs">
+      <DependentUpon>TongHopLuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TTKiemTraCongDiLam.aspx.cs">
+      <DependentUpon>TTKiemTraCongDiLam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TTKiemTraCongDiLam.aspx.designer.cs">
+      <DependentUpon>TTKiemTraCongDiLam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\InsertMaHang.ascx.cs">
+      <DependentUpon>InsertMaHang.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\InsertMaHang.ascx.designer.cs">
+      <DependentUpon>InsertMaHang.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\IsPayroll.ascx.cs">
+      <DependentUpon>IsPayroll.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\IsPayroll.ascx.designer.cs">
+      <DependentUpon>IsPayroll.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\KhoaChucNang.ascx.cs">
+      <DependentUpon>KhoaChucNang.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\KhoaChucNang.ascx.designer.cs">
+      <DependentUpon>KhoaChucNang.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\Orther.ascx.cs">
+      <DependentUpon>Orther.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\Orther.ascx.designer.cs">
+      <DependentUpon>Orther.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\PhanQuyenUser.ascx.cs">
+      <DependentUpon>PhanQuyenUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\PhanQuyenUser.ascx.designer.cs">
+      <DependentUpon>PhanQuyenUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\ResetPass.ascx.cs">
+      <DependentUpon>ResetPass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\ResetPass.ascx.designer.cs">
+      <DependentUpon>ResetPass.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAdmin\production\ToTruong.ascx.cs">
+      <DependentUpon>ToTruong.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAdmin\production\ToTruong.ascx.designer.cs">
+      <DependentUpon>ToTruong.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="WebAdmin\vendors\animate.css\" />
+    <Folder Include="WebAdmin\vendors\bootstrap\build\" />
+    <Folder Include="WebAdmin\vendors\bootstrap\nuget\" />
+    <Folder Include="WebAdmin\vendors\font-awesome\" />
+    <Folder Include="WebAdmin\vendors\fontawesome\" />
+    <Folder Include="WebAdmin\vendors\google-code-prettify\" />
+    <Folder Include="WebAdmin\vendors\jquery\" />
+    <Folder Include="WebAdmin\vendors\requirejs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54960</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54960/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets'))" />
+  </Target>
+  <Import Project="..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
