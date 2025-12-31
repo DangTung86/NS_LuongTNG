@@ -701,7 +701,7 @@ namespace TNGLuong
                     if (txt.Text != "")
                     {
 
-                        if (double.Parse(txt.Text.Trim()) < 0 || double.Parse(txt.Text.Trim()) > 1.3)
+                        if (double.Parse(txt.Text.Trim()) < 0 || double.Parse(txt.Text.Trim()) > 1)
                         {
                             sus = false;
                             break;
@@ -730,7 +730,7 @@ namespace TNGLuong
                 dtCongDoan.Columns.Add(new DataColumn("Ngay_ApDung", typeof(DateTime)));
                 if (checkValueAm_CongDoan() == false)
                 {
-                    lblMessenger.Text = "Số lượng thực hiện không thể nhỏ hơn 0 hoặc lớn hơn 1.3!";
+                    lblMessenger.Text = "Số lượng thực hiện không thể nhỏ hơn 0 hoặc lớn hơn 1!";
                     messageShow.Style["display"] = "block";
                     divThongBao.Style["display"] = "block";
                     return;
